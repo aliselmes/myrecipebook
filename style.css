@@ -161,6 +161,10 @@ footer p {
 
 #search-results {
     padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .recipe-card {
@@ -174,4 +178,16 @@ footer p {
 
 .recipe-card p {
     padding: 0 10px;
+}
+
+@media only screen and (min-width: 500px) {
+    .recipe-card {
+        width: 40%;
+       margin: 10px 10px;
+    }
+
+    .search-results {
+
+     
+    }
 }
