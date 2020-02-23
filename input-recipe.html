@@ -6,25 +6,36 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
         <title>My Recipe Book: Input Recipe</title>
       </head>  
 
       <body>
           <header>
-              <h1>My Recipe Book</h1>
+              <a href="index.html"><h1>My Recipe Book</h1></a>
           </header>
 
           <main>
-              <form>
-                  <label for="recipe-name">Recipe Name:</label>
-                  <input type="text" id="recipe-name" name="recipe-name">
+              
+              <form id="submit-recipe">
+                  <label for="recipe-name">Recipe Name:</label><br>
+                  <input type="text" id="recipe-name" name="recipe-name" value="Enter recipe name..." required><br>
 
-                  <p>Ingredients(Quantities):</p>
-                  <label for="first-ingr">1:</label><input type="text" id="first-ingr" name="recipe-name">
-                  <p>Method:</p>
                   
+                  <label for="ingredients">Ingredients (Quantities):</label><br>
+                  <textarea id="ingredients" name="ingredients" required>Type ingredients here with quantities in parenthesis...</textarea><br>
+                  
+                  <label for="medthod">Method:</label><br>
+                  <textarea id="method" name="method" required>Type the method here...</textarea><br>
+                  
+                  <input type="submit" value="Submit Recipe" id="submit-recipe-button">
               </form>
+              
           </main>
+
+          <footer>
+                <p>&copy; Alasdair Selmes 2020</p>
+            </footer>
 
       </body>
 

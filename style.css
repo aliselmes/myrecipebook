@@ -20,6 +20,12 @@ input {
     size: 50;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
 
 /*Home Page Styles*/
 
@@ -59,7 +65,7 @@ input {
 }
 
 .hero-text a:hover {
-    color: #ffcc00;
+    color: #ffcc00 ;
 }
 
 footer {
@@ -78,4 +84,46 @@ footer p {
         font-size: 3em;
     }
 }
+
+/* Input Page Styles*/
+
+#submit-recipe {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-family: 'Ubuntu';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#recipe-name {
+    width: 100%;
+}
+
+#submit-recipe textarea {
+    width: 100%;
+    resize: vertical;
+    border: solid 1px grey;
+}
+
+#submit-recipe-button {
+    font-family: 'Ubuntu';
+}
+
+@media only screen and (min-width: 768px) {
+    #submit-recipe {
+        font-size: 2em;
+    }
+
+    #recipe-name {
+        width: 25%;
+    }
+
+    #submit-recipe textarea {
+        width: 50%;
+    }
+}
+
 
