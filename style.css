@@ -110,6 +110,7 @@ footer p {
 
 #submit-recipe-button {
     font-family: 'Ubuntu';
+    background-color: #ffcc00;
 }
 
 @media only screen and (min-width: 768px) {
@@ -124,6 +125,8 @@ footer p {
     #submit-recipe textarea {
         width: 50%;
     }
+
+    #submit-recipe-button {
+        font-size: 0.5em;
+    }
 }
-
-
