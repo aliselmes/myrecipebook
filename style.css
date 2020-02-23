@@ -1,0 +1,81 @@
+/*Global Styles*/
+
+body{
+    height: 100vh;
+    font-size: 16px;
+}
+
+main {
+    height: 100%;
+}
+
+header {
+    font-family: 'Indie Flower';
+    text-align: center;
+    border-bottom: solid 1px grey;
+}
+
+input {
+    border: solid 1px grey;
+    size: 50;
+}
+
+
+/*Home Page Styles*/
+
+.hero-img {
+    background-image: url("img/kitchen.jpg");
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text {
+    text-align: center;
+    background-color: white;
+    opacity: 0.9;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-text h2 {
+    margin: 0;
+    padding: 25px 25px;
+    font-size: 1.5em;
+}
+
+.hero-text a {
+    text-decoration: none;
+    font-family: 'Ubuntu';
+    color: black;
+    cursor: pointer;
+}
+
+.hero-text a:hover {
+    color: #ffcc00;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px grey;
+}
+
+footer p {
+    font-family: 'Indie FLower';
+}
+
+@media only screen and (min-width: 768px) {
+    .hero-text h2 {
+        font-size: 3em;
+    }
+}
+
