@@ -1,13 +1,18 @@
 /*Global Styles*/
 
-body{
-    height: 100vh;
-    font-size: 16px;
-}
-
-main {
+html, body {
     height: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
 
 header {
     font-family: 'Indie Flower';
@@ -26,8 +31,24 @@ a {
     cursor: pointer;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px grey;
+    flex-shrink: 0;
+}
+
+footer p {
+    font-family: 'Indie FLower';
+}
+
 
 /*Home Page Styles*/
+
+.hero-container {
+    height: 100vh;
+}
 
 .hero-img {
     background-image: url("img/kitchen.jpg");
@@ -68,16 +89,6 @@ a {
     color: #ffcc00 ;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: solid 1px grey;
-}
-
-footer p {
-    font-family: 'Indie FLower';
-}
 
 @media only screen and (min-width: 768px) {
     .hero-text h2 {
@@ -96,6 +107,7 @@ footer p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 25px;
 }
 
 #recipe-name {
@@ -111,6 +123,7 @@ footer p {
 #submit-recipe-button {
     font-family: 'Ubuntu';
     background-color: #ffcc00;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -129,4 +142,36 @@ footer p {
     #submit-recipe-button {
         font-size: 0.5em;
     }
+}
+
+/* SEARCH PAGE STYLES */
+
+#recipe-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    width: 100%;
+    font-family: 'Ubuntu';
+}
+
+#search {
+    margin: 0 20px;
+}
+
+#search-results {
+    padding-bottom: 25px;
+}
+
+.recipe-card {
+    border: solid 1px grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.recipe-card p {
+    padding: 0 10px;
 }
