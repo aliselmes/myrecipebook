@@ -150,6 +150,7 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 50px 0;
     width: 100%;
     font-family: 'Ubuntu';
@@ -157,6 +158,16 @@ footer p {
 
 #search {
     margin: 0 20px;
+}
+
+#search-button {
+    margin-right: 25px;
+    background-color: #ffcc00;
+}
+
+#view-all-button {
+    margin-top: 25px;
+    background-color: #ffcc00;
 }
 
 #search-results {
@@ -180,14 +191,16 @@ footer p {
     padding: 0 10px;
 }
 
+@media only screen and (min-width: 413px) {
+    #view-all-button {
+        margin-top: 0px;
+    }
+}
+
 @media only screen and (min-width: 500px) {
     .recipe-card {
         width: 40%;
        margin: 10px 10px;
     }
 
-    .search-results {
-
-     
-    }
 }
