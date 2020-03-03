@@ -10,14 +10,17 @@
         <title>My Recipe Book</title>
       </head>  
 <body>
-          <header>
-              <h1>My Recipe Book</h1>
-          </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+          <div class="content">
+            <header>
+              <a href="index.html"><h1>My Recipe Book</h1></a>
+            </header>
+
+            <main>
+              
+                @RenderBody()
+              
+            </main>
+          </div>   
 
           <footer>
               <p>&copy; Alasdair Selmes 2020</p>
