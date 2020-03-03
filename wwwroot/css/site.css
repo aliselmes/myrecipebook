@@ -1,71 +1,206 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿/*Global Styles*/
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+  height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
+
+.content {
+  flex: 1 0 auto;
+}
+
+
+header {
+  font-family: 'Indie Flower';
+  text-align: center;
+  border-bottom: solid 1px grey;
+}
+
+input {
+  border: solid 1px grey;
+  size: 50;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 1px grey;
+  flex-shrink: 0;
+}
+
+footer p {
+  font-family: 'Indie FLower';
+}
+
+
+/*Home Page Styles*/
+
+.hero-container {
+  height: 100vh;
+}
+
+.hero-img {
+  background-image: url("img/kitchen.jpg");
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: center;
+  background-color: white;
+  opacity: 0.9;
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-text h2 {
+  margin: 0;
+  padding: 25px 25px;
+  font-size: 1.5em;
+}
+
+.hero-text a {
+  text-decoration: none;
+  font-family: 'Ubuntu';
+  color: black;
+  cursor: pointer;
+}
+
+.hero-text a:hover {
+  color: #ffcc00 ;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .hero-text h2 {
+      font-size: 3em;
+  }
+}
+
+/* Input Page Styles*/
+
+#submit-recipe {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 50px;
+  font-family: 'Ubuntu';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#recipe-name {
   width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+}
+
+#submit-recipe textarea {
+  width: 100%;
+  resize: vertical;
+  border: solid 1px grey;
+}
+
+#submit-recipe-button {
+  font-family: 'Ubuntu';
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  #submit-recipe {
+      font-size: 2em;
+  }
+
+  #recipe-name {
+      width: 25%;
+  }
+
+  #submit-recipe textarea {
+      width: 50%;
+  }
+
+  #submit-recipe-button {
+      font-size: 0.5em;
+  }
+}
+
+/* SEARCH PAGE STYLES */
+
+#recipe-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  width: 100%;
+  font-family: 'Ubuntu';
+}
+
+#search {
+  margin: 0 20px;
+}
+
+#search-button {
+  margin-right: 25px;
+  background-color: #ffcc00;
+}
+
+#view-all-button {
+  margin-top: 25px;
+  background-color: #ffcc00;
+}
+
+#search-results {
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  border: solid 1px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.recipe-card p {
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 413px) {
+  #view-all-button {
+      margin-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .recipe-card {
+      width: 40%;
+     margin: 10px 10px;
+  }
+
 }
