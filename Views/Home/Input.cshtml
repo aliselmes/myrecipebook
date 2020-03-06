@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Input Page";
+}
+
+            <main>
+              
+              <form id="submit-recipe">
+                  <label for="recipe-name">Recipe Name:</label><br>
+                  <input type="text" id="recipe-name" name="recipe-name" value="Enter recipe name..." required><br>
+
+                  
+                  <label for="ingredients">Ingredients (Quantities):</label><br>
+                  <textarea id="ingredients" name="ingredients" required>Type ingredients here with quantities in parenthesis...</textarea><br>
+                  
+                  <label for="medthod">Method:</label><br>
+                  <textarea id="method" name="method" required>Type the method here...</textarea><br>
+                  
+                  <input type="submit" value="Submit Recipe" id="submit-recipe-button">
+              </form>
+              
+            </main>

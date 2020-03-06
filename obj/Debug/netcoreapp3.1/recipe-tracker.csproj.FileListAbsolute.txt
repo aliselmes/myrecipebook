@@ -34,3 +34,4 @@
 /Users/alasdairselmes/Documents/PROJECTS/BEEP/recipe-tracker/obj/Debug/netcoreapp3.1/recipe-tracker.csproj.CopyComplete
 /Users/alasdairselmes/Documents/PROJECTS/BEEP/recipe-tracker/obj/Debug/netcoreapp3.1/Razor/Views/Recipe/Add.cshtml.g.cs
 /Users/alasdairselmes/Documents/PROJECTS/BEEP/recipe-tracker/obj/Debug/netcoreapp3.1/Razor/Views/Recipe/Index.cshtml.g.cs
+/Users/alasdairselmes/Documents/PROJECTS/BEEP/recipe-tracker/obj/Debug/netcoreapp3.1/Razor/Views/Home/input.cshtml.g.cs
