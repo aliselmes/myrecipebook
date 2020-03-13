@@ -8,5 +8,9 @@ namespace recipe_tracker.Controllers {
         public ActionResult Add () {
             return View ();
         }
+        [HttpPost]
+        public ActionResult Submit (string recipename, string ingredients, string instructions) {
+            return Content ("recipename:" + recipename);   
+        }
     }
-}
+} 
