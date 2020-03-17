@@ -122,7 +122,7 @@ footer p {
   flex-direction: column;
 }
 
-#addingredientbutton {
+#addingredientbutton, #addstepbutton {
   background-color: #ffcc00;
   font-family: 'Ubuntu';
   cursor: pointer;
@@ -132,16 +132,22 @@ footer p {
   margin: 5px;
 }
 
-#submit-recipe textarea {
-  width: 100%;
-  resize: vertical;
-  border: solid 1px grey;
+#instructions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#instructions input {
+  margin: 5px;
 }
 
 #submit-recipe-button {
   font-family: 'Ubuntu';
   background-color: #ffcc00;
   cursor: pointer;
+  padding: 10px 5px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -156,6 +162,11 @@ footer p {
   #ingredients {
     flex-direction: row;
   }
+
+  #instructions p {
+    font-size: 0.5em;
+  }
+
 
   #submit-recipe textarea {
       width: 50%;
