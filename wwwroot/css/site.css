@@ -51,7 +51,7 @@ footer p {
 }
 
 .hero-img {
-  background-image: url("../img/kitchen.jpg");
+  background-image: url("../img/kitchen.jpg"); 
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -114,6 +114,24 @@ footer p {
   width: 100%;
 }
 
+#ingredients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#addingredientbutton {
+  background-color: #ffcc00;
+  font-family: 'Ubuntu';
+  cursor: pointer;
+}
+
+#ingredients input {
+  margin: 5px;
+}
+
 #submit-recipe textarea {
   width: 100%;
   resize: vertical;
@@ -133,6 +151,10 @@ footer p {
 
   #recipe-name {
       width: 25%;
+  }
+
+  #ingredients {
+    flex-direction: row;
   }
 
   #submit-recipe textarea {

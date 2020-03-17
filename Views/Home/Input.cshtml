@@ -9,8 +9,13 @@
                   <input type="text" id="recipename" name="recipename" placeholder="Enter recipe name..."><br>
 
                   
-                  <label for="ingredients">Ingredients (Quantities):</label><br>
-                  <textarea id="ingredients" name="ingredients">Type ingredients here with quantities in parenthesis...</textarea><br>
+                  <label for="ingredients">Ingredients:</label><br>
+                  <div id="ingredients">
+                    <input type="text" id="ingredientname" name="ingredientname" placeholder="Name">
+                    <input type="text" id="ingredientamount" name="ingredientamount" placeholder="Amount">
+                    <input type="text" id="ingredientunits" name="ingredientunits" placeholder="Units">
+                    <input type="button" id="addingredientbutton" value="Add ingredient">
+                  </div><br>
                   
                   <label for="instructions">Instructions:</label><br>
                   <textarea id="instructions" name="instructions">Type the method here...</textarea><br>
