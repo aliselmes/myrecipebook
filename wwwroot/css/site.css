@@ -143,6 +143,18 @@ footer p {
   margin: 5px;
 }
 
+#authorsnotes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#authorstext {
+  height: 50px;
+  width: 100%;
+  border: 1px solid grey;
+}
+
 #submit-recipe-button {
   font-family: 'Ubuntu';
   background-color: #ffcc00;
@@ -171,7 +183,9 @@ footer p {
     padding: 0px 50px;
   }
 
-
+  #authorsnotes {
+    width: 500px;
+  }
 
   #submit-recipe textarea {
       width: 50%;
