@@ -155,8 +155,8 @@ footer p {
       font-size: 2em;
   }
 
-  #recipe-name {
-      width: 25%;
+  #recipename {
+      padding: 0px 50px;
   }
 
   #ingredients {
@@ -166,6 +166,11 @@ footer p {
   #instructions p {
     font-size: 0.5em;
   }
+
+  #instructiontext {
+    padding: 0px 50px;
+  }
+
 
 
   #submit-recipe textarea {
