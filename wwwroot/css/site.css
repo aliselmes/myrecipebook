@@ -275,6 +275,21 @@ footer p {
 /*End table styles*/
 
 
+#steps-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .recipe-card p {
   padding: 0 10px;
 }
