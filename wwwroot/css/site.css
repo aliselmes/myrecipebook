@@ -263,7 +263,7 @@ footer p {
   box-sizing: border-box;
   flex-grow: 1;
   width: 100%;  /* Default to full width*/
-  padding: 0.8em 1.2em;
+  padding: 0.8em 0.8em;
   overflow: hidden;
   list-style: none;
   background: fade(slategrey,20%);
@@ -273,6 +273,7 @@ footer p {
 .Rtable--3cols > .Rtable-cell  { width: 33.33%; }
 
 /*End table styles*/
+
 
 .recipe-card p {
   padding: 0 10px;
