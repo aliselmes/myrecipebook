@@ -2,6 +2,7 @@
 
 html, body {
   height: 100%;
+  background-color: #5b5a69;
 }
 
 body {
@@ -15,9 +16,16 @@ body {
 
 
 header {
-  font-family: 'Indie Flower';
+  font-family: 'Baloo 2', cursive;
   text-align: center;
   border-bottom: solid 1px grey;
+  background-color: #5b5a69;
+  padding: 10px 0px;
+}
+
+header h1 {
+  margin: 0;
+  color: #ffffff;
 }
 
 input {
@@ -37,10 +45,12 @@ footer {
   align-items: center;
   border-top: solid 1px grey;
   flex-shrink: 0;
+  background-color: #5b5a69;
 }
 
 footer p {
-  font-family: 'Indie FLower';
+  font-family: 'Baloo 2', cursive;
+  color: #ffffff;
 }
 
 
@@ -80,13 +90,13 @@ footer p {
 
 .hero-text a {
   text-decoration: none;
-  font-family: 'Ubuntu';
-  color: black;
+  font-family: 'Baloo 2', cursive;
+  color: #5b5a69;
   cursor: pointer;
 }
 
 .hero-text a:hover {
-  color: #ffcc00 ;
+  color: #fff2bb;
 }
 
 
