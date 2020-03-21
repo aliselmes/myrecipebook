@@ -140,7 +140,8 @@ footer p {
 }
 
 #instructions {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
   justify-content: center;
   align-items: center;
   flex-direction: row;

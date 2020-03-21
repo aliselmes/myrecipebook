@@ -6,27 +6,27 @@
               
               <form id="submit-recipe" method="post" action="/recipe/submit">
                   <label for="recipename">Recipe Name:</label><br>
-                  <input type="text" id="recipename" name="recipename" placeholder="Enter recipe name..."><br>
+                  <input type="text" id="recipename" data-bind="value:recipe().name" placeholder="Enter recipe name..."><br>
 
                   
                   <label for="ingredients">Ingredients:</label><br>
-                  <div id="ingredients">
-                    <input type="text" id="ingredientname" name="ingredientname" placeholder="Name">
-                    <input type="text" id="ingredientamount" name="ingredientamount" placeholder="Amount">
-                    <input type="text" id="ingredientunits" name="ingredientunits" placeholder="Units">
-                    <input type="button" id="addingredientbutton" value="Add ingredient">
+                  <div id="ingredients" data-bind="foreach:recipe().ingredients">
+                    <input type="text" id="ingredientname" data-bind="value:name" placeholder="Name">
+                    <input type="text" id="ingredientamount" data-bind="value:amount" placeholder="Amount">
+                    <input type="text" id="ingredientunits" data-bind="value:units" placeholder="Units"><br>
                   </div><br>
+                    <input type="button" id="addingredientbutton" data-bind="click:addIngredient" value="Add ingredient"><br>
                   
                   <label for="instructions">Instructions:</label><br>
-                  <div id="instructions">
-                    <p>1.</p>
-                    <input type="text" id="instructiontext" name="instructiontext" placeholder="Type instructions here">
-                    <input type="button" id="addstepbutton" value="Add step">
+                  <div id="instructions" data-bind="foreach:recipe().instructions">
+                    <span data-bind="text:stepnumber">1.</span>
+                    <input type="text" id="instructiontext" data-bind="value:text" placeholder="Type instructions here">
                   </div><br>
+                    <input type="button" id="addstepbutton" data-bind="click:addStep" value="Add step"><br>
 
                   <label for="authorsnotes">Author's Notes:</label><br>
                   <div id="authorsnotes">
-                    <textarea type="text" id="authorstext" name="authorstext" placeholder="Type a note about your recipe!"></textarea>
+                    <textarea type="text" id="authorstext" data-bind="value:recipe().authorsnotes" placeholder="Type a note about your recipe!"></textarea>
                   </div><br>
 
                   <label for="imgupload">Photo:</label><br>
