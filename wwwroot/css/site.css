@@ -247,8 +247,8 @@ footer p {
 }
 
 .recipe-card img {
-  height: 100px;
-  width: 200px;
+  height: 33%;
+  width: 100%;
 }
 
 /*Tables*/
