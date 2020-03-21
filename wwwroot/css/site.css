@@ -2,7 +2,6 @@
 
 html, body {
   height: 100%;
-  background-color: #5b5a69;
 }
 
 body {
@@ -19,13 +18,12 @@ header {
   font-family: 'Baloo 2', cursive;
   text-align: center;
   border-bottom: solid 1px grey;
-  background-color: #5b5a69;
   padding: 10px 0px;
 }
 
 header h1 {
   margin: 0;
-  color: #ffffff;
+  color: #adc965;
 }
 
 input {
@@ -45,12 +43,11 @@ footer {
   align-items: center;
   border-top: solid 1px grey;
   flex-shrink: 0;
-  background-color: #5b5a69;
 }
 
 footer p {
   font-family: 'Baloo 2', cursive;
-  color: #ffffff;
+  color: #adc965;
 }
 
 
@@ -91,12 +88,12 @@ footer p {
 .hero-text a {
   text-decoration: none;
   font-family: 'Baloo 2', cursive;
-  color: #5b5a69;
+  color: #e25a46;
   cursor: pointer;
 }
 
 .hero-text a:hover {
-  color: #fff2bb;
+  color: #ff8358;
 }
 
 
@@ -112,12 +109,12 @@ footer p {
   width: 80%;
   margin: 0 auto;
   padding-top: 50px;
-  font-family: 'Ubuntu';
+  font-family: 'Baloo 2', cursive;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  padding-bottom: 50px;
 }
 
 #recipe-name {
