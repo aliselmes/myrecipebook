@@ -110,6 +110,7 @@ nav {
 }
 
 .hero-text {
+  font-family: 'Baloo 2', cursive;
   text-align: center;
   background-color: white;
   opacity: 0.9;
@@ -127,21 +128,18 @@ nav {
   font-size: 2em;
 }
 
-.hero-text a {
-  text-decoration: none;
-  font-family: 'Baloo 2', cursive;
-  color: #3c3c3c;
-  cursor: pointer;
-}
-
-.hero-text a:hover {
-  color: #af473c;
+.hero-text p {
+  margin: 0 10px;
 }
 
 
 @media only screen and (min-width: 768px) {
   .hero-text h2 {
       font-size: 3em;
+  }
+
+  .hero-text p {
+    font-size: 1.75em;
   }
 }
 
