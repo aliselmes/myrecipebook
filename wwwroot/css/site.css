@@ -24,8 +24,26 @@ header {
 
 header h1 {
   margin: 0;
-  color: #af473c;
+  color: #945d60;
   font-family: 'Gloria Hallelujah', cursive;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+nav p {
+  margin: 0 20px;
+  color: #3c3c3c;
+}
+
+nav p:hover {
+  color: #945d60;
+  cursor: pointer;
 }
 
 input {
@@ -46,11 +64,32 @@ footer {
   border-top: solid 1px #626e60;
   flex-shrink: 0;
   margin-top: 10px;
+  background-color: #626e60;
 }
 
 footer p {
   font-family: 'Baloo 2', cursive;
-  color: #3c3c3c;
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 50px;
+  }
+}
+
+nav {
+  font-size: 1.5em;
+}
+
+@media only screen and (min-width: 1200px) {
+  header {
+    padding: 10px 100px;
+  }
 }
 
 
@@ -84,8 +123,8 @@ footer p {
 
 .hero-text h2 {
   margin: 0;
-  padding: 25px 25px;
-  font-size: 1.5em;
+  padding: 25px 10px;
+  font-size: 2em;
 }
 
 .hero-text a {
