@@ -17,13 +17,15 @@ body {
 header {
   font-family: 'Baloo 2', cursive;
   text-align: center;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px #626e60;
   padding: 10px 0px;
+  margin-bottom: 10px;
 }
 
 header h1 {
   margin: 0;
-  color: #adc965;
+  color: #af473c;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 input {
@@ -41,13 +43,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: solid 1px grey;
+  border-top: solid 1px #626e60;
   flex-shrink: 0;
+  margin-top: 10px;
 }
 
 footer p {
   font-family: 'Baloo 2', cursive;
-  color: #adc965;
+  color: #3c3c3c;
 }
 
 
@@ -88,12 +91,12 @@ footer p {
 .hero-text a {
   text-decoration: none;
   font-family: 'Baloo 2', cursive;
-  color: #e25a46;
+  color: #3c3c3c;
   cursor: pointer;
 }
 
 .hero-text a:hover {
-  color: #ff8358;
+  color: #af473c;
 }
 
 
