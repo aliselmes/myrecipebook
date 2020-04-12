@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>recipe_tracker</RootNamespace>
   </PropertyGroup>
-
-
-
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35"/>
+  </ItemGroup>
 </Project>
