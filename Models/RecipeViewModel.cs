@@ -1,7 +1,8 @@
+using System;
 namespace recipe_tracker.Models
 {
 
-    public class RecipeViewModel
+    public class Recipe
     {
         public string id { get; set; }
         public string name { get; set; }

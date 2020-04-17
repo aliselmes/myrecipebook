@@ -1,9 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using recipe_tracker.services;
+using recipe_tracker.Models.ViewModels; 
 
 namespace recipe_tracker.Controllers {
     public class RecipeController:Controller {
         public ActionResult Index () {
-            return View(DatabaseService.Get());
+            var model = new RecipeViewModel {
+                Recipes = DatabaseService.GetAll()
+            };
+
+            return View (model);
         }
         public ActionResult Add () {
             return View ();

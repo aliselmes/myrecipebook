@@ -4,14 +4,15 @@ using System.Configuration;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using MySql.Data.MySqlClient; 
 
 namespace recipe_tracker.services
 {
-    public static class DatabaseService : IDatabaseConnection
+    public static class DatabaseService //: IDatabaseConnection
     {
         public static string GetConnection()
         {
-            return "Server=localhost;Uid=recipetracker;Pwd=a;Database=recipe_tracker";
+            return "Server=localhost;Port=8889;Uid=recipetracker;Pwd=a;Database=recipe_tracker";
 
 
             /*
@@ -19,14 +20,14 @@ namespace recipe_tracker.services
             */
             
         }
-        public static IList<RecipeViewModel> Get(string id)
+        public static IList<Recipe> GetAll()
         {
             // Code to get data C _R_ U D
-            using (IDbConnection db = new SqlConnection(GetConnection()))
+            using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
-                var recipe = db.Query<RecipeViewModel>("Select * From Recipes").ToList();
+                var recipe = db.Query<Recipe>("Select * From Recipes").ToList();
+                return recipe;
             }
-            return recipe;
         }
 
         public static bool Save(object data)
