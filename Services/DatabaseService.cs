@@ -1,3 +1,4 @@
+using System;
 using Dapper;
 using recipe_tracker.Models;
 using System.Configuration;
@@ -22,7 +23,7 @@ namespace recipe_tracker.services
         }
         public static IList<Recipe> GetAll()
         {
-            // Code to get data C _R_ U D
+            
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
                 var recipe = db.Query<Recipe>("Select * From Recipes").ToList();
@@ -30,18 +31,27 @@ namespace recipe_tracker.services
             }
         }
 
-        public static bool Save(object data)
+        public static bool Save(Recipe data)
         {
-            // Code to save data _C_ R U D
+            string sql = @"INSERT INTO recipes (id, name, dateAdded, author) 
+            Values (?Id, ?Name, ?DateAdded, ?Author);";
+            using (IDbConnection db = new MySqlConnection(GetConnection()))
+            {
+                Console.WriteLine(data.Name);
+                var result = db.Execute(sql, data);
+
+                if (result > 0) {
+                    return true;
+                }
+            }
             return false;
-            // OR If data already exists, C R _U_ D
 
         }
 
         public static bool Delete(string id)
         {
             return false;
-            // Code to Delete data C R U _D_
+            
         }
     }
 }

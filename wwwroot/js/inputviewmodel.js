@@ -8,6 +8,11 @@ function inputviewmodel() {
         var nextStep = self.recipe().instructions().length +1;
         self.recipe().instructions.push(new instruction(nextStep));
     };
+
+    self.submit = function() {
+        var data = {recipe: ko.toJS(self.recipe())}
+        Post("/recipe/submit", data, function(response){console.log(response)}) 
+    };
 }
 
 function recipe() {
@@ -35,4 +40,14 @@ function instruction(step) {
     self.id = ko.observable();
     self.stepnumber = ko.observable(step || 1);
     self.text = ko.observable();
+}
+
+function Post(url, data, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url)
+    xhr.setRequestHeader("Content-Type", "application/json")
+    xhr.onload = function(data){
+        callback(data);
+    }
+    xhr.send(JSON.stringify(data));
 }
