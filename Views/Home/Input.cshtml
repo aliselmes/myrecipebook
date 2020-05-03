@@ -5,6 +5,8 @@
             <main>
               
               <form id="submit-recipe" method="post" action="/recipe/submit">
+                  @Html.AntiForgeryToken()
+
                   <label for="recipename">Recipe Name:</label><br>
                   <input type="text" id="recipename" data-bind="value:recipe().name" placeholder="Enter recipe name..."><br>
 

@@ -1,17 +1,20 @@
 function inputviewmodel() {
     var self = this;
     self.recipe = ko.observable(new recipe());
-    self.addIngredient = function() {
+    self.addIngredient = function () {
         self.recipe().ingredients.push(new ingredient());
     };
-    self.addStep = function() {
-        var nextStep = self.recipe().instructions().length +1;
+    self.addStep = function () {
+        var nextStep = self.recipe().instructions().length + 1;
         self.recipe().instructions.push(new instruction(nextStep));
     };
 
-    self.submit = function() {
-        var data = {recipe: ko.toJS(self.recipe())}
-        Post("/recipe/submit", data, function(response){console.log(response)}) 
+    self.submit = function () {
+
+        var data = ko.toJS(self.recipe());
+        Post("/recipe/submit", data, function (response) {
+            console.log(response)
+        })
     };
 }
 
@@ -46,8 +49,13 @@ function Post(url, data, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url)
     xhr.setRequestHeader("Content-Type", "application/json")
-    xhr.onload = function(data){
-        callback(data);
+    xhr.setRequestHeader("Accept", "application/json")
+
+    var xsrfToken = document.querySelector("[name=__RequestVerificationToken]").value;
+    xhr.setRequestHeader("XSRF-TOKEN", xsrfToken)
+    xhr.onload = function (data) {
+        
+        callback(this.response);
     }
     xhr.send(JSON.stringify(data));
 }
