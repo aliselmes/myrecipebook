@@ -29,6 +29,16 @@ namespace recipe_tracker.services
             }
         }
 
+        public static Recipe Get(Guid Id) 
+        {
+            using (IDbConnection db = new MySqlConnection(GetConnection()))
+            {
+               var sql = "Select * From Recipes Where Id=?Id";
+               var recipe = db.QueryFirst<Recipe>(sql, new {Id=Id}); 
+               return recipe;
+            }
+        }
+
         public static string Save(Recipe data)
         {
             string sql = @"INSERT INTO recipes (id, name, dateAdded, author)

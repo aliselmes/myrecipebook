@@ -1,4 +1,4 @@
-﻿/*Global Styles*/
+/*Global Styles*/
 
 html, body {
   height: 100%;
@@ -365,4 +365,17 @@ nav {
      margin: 10px 10px;
   }
 
+}
+
+h2 {}
+
+.card {
+    border: solid 1px black;
+    margin: 3px;
+    padding: 10px;
+}
+
+.recipe-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }

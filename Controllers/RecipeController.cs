@@ -11,7 +11,7 @@ namespace recipe_tracker.Controllers
     {
         public ActionResult Index()
         {
-            var model = new RecipeViewModel
+            var model = new RecipesViewModel
             {
                 Recipes = DatabaseService.GetAll()
             };
@@ -19,9 +19,13 @@ namespace recipe_tracker.Controllers
             return View(model);
         }
 
-        public ActionResult Add()
+         public ActionResult View(Guid Id)
         {
-            return View();
+            var model = new RecipeViewModel
+            {
+                Recipe = DatabaseService.Get(Id)
+            };
+            return View(model);
         }
 
         [HttpPost]
@@ -31,25 +35,15 @@ namespace recipe_tracker.Controllers
             {
                 return new JsonResult("false");
             }
-            try
-            {
-                Console.WriteLine("Name is '{0}'", recipe.Name);
-            }
-            catch (Exception e)
-            {
-            }
-            //var recipe = new Recipe
-            //{
-            //    Id = Guid.NewGuid().ToString(),
-            //    Name = name,
-            //    DateAdded = DateTime.Now,
-            //    Author = "admin"
-            //};
+            
+           
             recipe.Id = Guid.NewGuid().ToString();
             recipe.Author = "Merlin";
 
             var a = DatabaseService.Save(recipe);
             return new JsonResult(a.ToString());
         }
-    }
+
+
+    } 
 }

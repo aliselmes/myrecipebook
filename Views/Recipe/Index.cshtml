@@ -1,6 +1,17 @@
-@model RecipeViewModel
+@model RecipesViewModel
 
-@foreach (var recipe in Model.Recipes) 
-{ 
-    <span>@recipe.Name</span>
-}
+<div class="banner">
+    <h1>All Recipes</h1>
+</div>
+<div class="recipe-list">
+    @foreach (var recipe in Model.Recipes) 
+    { 
+        <div class="card">
+            <a href="/recipe/view/@recipe.Id">
+                <h2>
+                    @recipe.Name
+                </h2>
+            </a>
+        </div>
+    }
+</div>
