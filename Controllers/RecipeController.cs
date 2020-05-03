@@ -46,6 +46,7 @@ namespace recipe_tracker.Controllers
             //    Author = "admin"
             //};
             recipe.Id = Guid.NewGuid().ToString();
+            recipe.Author = "Merlin";
 
             var a = DatabaseService.Save(recipe);
             return new JsonResult(a.ToString());

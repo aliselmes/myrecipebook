@@ -34,9 +34,9 @@ namespace recipe_tracker.services
             string sql = @"INSERT INTO recipes (id, name, dateAdded, author)
             Values (?Id, ?Name, ?DateAdded, ?Author);";
 
-            sql = $@"INSERT INTO recipes (id, name, dateAdded, author)
+            /*sql = $@"INSERT INTO recipes (id, name, dateAdded, author)
             Values ({data.Id}, {data.Name}, {data.DateAdded}, {data.Author});";
-            return string.Format(sql, data);
+            return string.Format(sql, data);*/
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
                 Console.WriteLine(data.Name);

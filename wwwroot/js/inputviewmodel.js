@@ -26,6 +26,8 @@ function recipe() {
     self.instructions = ko.observableArray([new instruction()]);
     self.authorsnotes = ko.observable();
     self.imgupload = ko.observable();
+    self.author = ko.observable();
+    self.dateadded = ko.observable();
 }
 
 ko.applyBindings(new inputviewmodel());

@@ -33,7 +33,7 @@ namespace recipe_tracker.Models
     {
         public string Id { get; set; }
 
-        public string Stepnumber { get; set; }
+        public int Stepnumber { get; set; }
 
         public string Text { get; set; }
     }
