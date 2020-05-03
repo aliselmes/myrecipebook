@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json.Linq;
 
 namespace recipe_tracker.services
 {
@@ -39,14 +40,12 @@ namespace recipe_tracker.services
             }
         }
 
-        public static string Save(Recipe data)
+        public static Response Save(Recipe data)
         {
             string sql = @"INSERT INTO recipes (id, name, dateAdded, author)
             Values (?Id, ?Name, ?DateAdded, ?Author);";
 
-            /*sql = $@"INSERT INTO recipes (id, name, dateAdded, author)
-            Values ({data.Id}, {data.Name}, {data.DateAdded}, {data.Author});";
-            return string.Format(sql, data);*/
+           
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
                 Console.WriteLine(data.Name);
@@ -54,15 +53,21 @@ namespace recipe_tracker.services
 
                 if (result > 0)
                 {
-                    return "true";
+                    return new Response{success = true, message = ""};
                 }
             }
-            return "false";
+            return new Response{success = false};
         }
 
         public static bool Delete(string id)
         {
             return false;
+        }
+
+        public class Response 
+        {
+            public bool success {get; set;}
+            public string message {get; set;}
         }
     }
 }

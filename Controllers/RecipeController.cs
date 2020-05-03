@@ -41,7 +41,7 @@ namespace recipe_tracker.Controllers
             recipe.Author = "Merlin";
 
             var a = DatabaseService.Save(recipe);
-            return new JsonResult(a.ToString());
+            return new JsonResult(a);
         }
 
 

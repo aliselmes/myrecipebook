@@ -1,6 +1,7 @@
 function inputviewmodel() {
     var self = this;
     self.recipe = ko.observable(new recipe());
+    self.status = ko.observable();
     self.addIngredient = function () {
         self.recipe().ingredients.push(new ingredient());
     };
@@ -12,8 +13,16 @@ function inputviewmodel() {
     self.submit = function () {
 
         var data = ko.toJS(self.recipe());
-        Post("/recipe/submit", data, function (response) {
+        Post("/recipe/submit", data, function (res) {
+            var response = JSON.parse(res)
             console.log(response)
+            if (response.success) {
+                self.status("Recipe added!")
+                self.recipe(new recipe());
+            }
+            else {
+                self.status(response.message)
+            }
         })
     };
 }
