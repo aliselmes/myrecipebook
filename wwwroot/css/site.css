@@ -150,8 +150,7 @@ nav {
   margin: 0 auto;
   padding-top: 50px;
   font-family: 'Baloo 2', cursive;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
   align-items: center;
   padding-bottom: 50px;
@@ -162,11 +161,7 @@ nav {
 }
 
 #ingredients {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
+  display: grid;
 }
 
 #ingredients-container {
@@ -188,10 +183,7 @@ nav {
 
 #instructions {
   display: grid;
-  grid-template-columns: 1fr 10fr;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  grid-template-columns: 1fr 8fr 1fr;
 }
 
 
@@ -253,7 +245,6 @@ nav {
   }
 
   #submit-recipe textarea {
-      width: 50%;
   }
 
   #submit-recipe-button {
@@ -378,4 +369,14 @@ h2 {}
 .recipe-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+form label {
+    display: grid;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+form:last-child {
+    margin-bottom: 15px;
 }

@@ -1,47 +1,55 @@
 @{
-    ViewData["Title"] = "Input Page";
+ViewData["Title"] = "Input Page";
 }
 
-            <main>
-              
-              <form id="submit-recipe" method="post" action="/recipe/submit">
-                  @Html.AntiForgeryToken()
+<main>
 
-                  <label for="recipename">Recipe Name:</label><br>
-                  <input type="text" id="recipename" data-bind="value:recipe().name" placeholder="Enter recipe name..."><br>
+  <form id="submit-recipe" method="post" action="/recipe/submit">
+    @Html.AntiForgeryToken()
 
-                  
-                  <label for="ingredients">Ingredients:</label><br>
+    <label for="recipename">
+      <span>Recipe Name:</span>
+      <input type="text" id="recipename" data-bind="value:recipe().name" placeholder="Enter recipe name...">
+    </label>
 
-                    <div id="ingredients" data-bind="foreach:recipe().ingredients">
+    <label for="ingredients">
+      <span>Ingredients:</span>
 
-                    <div id="ingredients-container">
-                      <input type="text" id="ingredientname" data-bind="value:name" placeholder="Name">
-                      <input type="text" id="ingredientamount" data-bind="value:amount" placeholder="Amount">
-                      <input type="text" id="ingredientunits" data-bind="value:units" placeholder="Units"><br>
-                    </div>
+      <div id="ingredients" data-bind="foreach:recipe().ingredients">
 
-                    </div><br>
-                    <input type="button" id="addingredientbutton" data-bind="click:addIngredient" value="Add ingredient"><br>
-                  
-                  <label for="instructions">Instructions:</label><br>
-                  <div id="instructions" data-bind="foreach:recipe().instructions">
-                    <span data-bind="text:stepnumber">1.</span>
-                    <input type="text" id="instructiontext" data-bind="value:text" placeholder="Type instructions here">
-                  </div><br>
-                    <input type="button" id="addstepbutton" data-bind="click:addStep" value="Add step"><br>
+        <div id="ingredients-container">
+          <input type="text" id="ingredientname" data-bind="value:name" placeholder="Name">
+          <input type="text" id="ingredientamount" data-bind="value:amount" placeholder="Amount">
+          <input type="text" id="ingredientunits" data-bind="value:units" placeholder="Units">
+          <input type="button" id="addingredientbutton" data-bind="click:$parent.addIngredient" value="+">
+        </div>
 
-                  <label for="authorsnotes">Author's Notes:</label><br>
-                  <div id="authorsnotes">
-                    <textarea type="text" id="authorstext" data-bind="value:recipe().authorsnotes" placeholder="Type a note about your recipe!"></textarea>
-                  </div><br>
+      </div>
+    </label>
 
-                  <label for="imgupload">Photo:</label><br>
-                  <div id="photo">
-                    <input type="file" id="imgupload" name="imgupload" accept="image/*">
-                  </div><br>
-                  <input type="button" data-bind="click:submit" value="Submit Recipe" id="submit-recipe-button">
-                  <div data-bind="text:status"></div>
-              </form>
-              
-            </main>
+    <label for="instructions">
+      <span>Instructions:</span>
+      <div id="instructions" data-bind="foreach:recipe().instructions">
+        <span data-bind="text:stepnumber">1.</span>
+        <input type="text" id="instructiontext" data-bind="value:text" placeholder="Type instructions here">
+        <input type="button" id="addstepbutton" data-bind="click:$parent.addStep" value="+">
+      </div>
+    </label>
+
+    <label for="authorsnotes"><span>Author's Notes:</span>
+
+      <textarea type="text" id="authorstext" data-bind="value:recipe().authorsnotes"
+        placeholder="Type a note about your recipe!"></textarea>
+
+    </label>
+
+    <label for="imgupload"><span>Photo:</span>
+      <div id="photo">
+        <input type="file" id="imgupload" name="imgupload" accept="image/*">
+      </div>
+    </label>
+    <input type="button" data-bind="click:submit" value="Submit Recipe" id="submit-recipe-button">
+    <div data-bind="text:status"></div>
+  </form>
+
+</main>

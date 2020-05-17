@@ -1,3 +1,4 @@
+using System.Transactions;
 using System;
 using Dapper;
 using recipe_tracker.Models;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Linq;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json.Linq;
+using Dapper.Transaction;
 
 namespace recipe_tracker.services
 {
@@ -45,16 +47,30 @@ namespace recipe_tracker.services
             string sql = @"INSERT INTO recipes (id, name, dateAdded, author)
             Values (?Id, ?Name, ?DateAdded, ?Author);";
 
-           
+            var ingredientSql = @"INSERT INTO ingredients (id, recipeId, name, amount, units)
+            Values (?Id, ?RecipeId, ?Name, ?Amount, ?Units);";
+
+            var instructionSql = @"INSERT INTO instructions (id, recipeId, stepnumber, text)
+            Values (?Id, ?RecipeId, ?Stepnumber, ?Text);";
+
+           var ingredients = data.Ingredients.ToList();
+           ingredients.ForEach(x=>x.RecipeId=data.Id);
+           var instructions = data.Instructions.ToList();
+           instructions.ForEach(x=>x.RecipeId=data.Id);
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
-                Console.WriteLine(data.Name);
-                var result = db.Execute(sql, data);
-
+                Console.WriteLine(data);
+                db.Open();
+                using (var transaction = db.BeginTransaction()) {
+                var result = db.Execute(sql, data, transaction:transaction);
+                var ingredientResult = transaction.Execute(ingredientSql, ingredients);
+                var instructionResult = transaction.Execute(instructionSql, instructions);
+                transaction.Commit();
                 if (result > 0)
                 {
                     return new Response{success = true, message = ""};
                 }
+            }
             }
             return new Response{success = false};
         }
