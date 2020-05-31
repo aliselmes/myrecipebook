@@ -32,13 +32,18 @@ namespace recipe_tracker.services
             }
         }
 
-        public static Recipe Get(Guid Id) 
+        public static Recipe Get(Guid Id)
         {
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
-               var sql = "Select * From Recipes Where Id=?Id";
-               var recipe = db.QueryFirst<Recipe>(sql, new {Id=Id}); 
-               return recipe;
+                var sql = "SELECT * FROM Recipes WHERE Id=?Id";
+                var recipe = db.QueryFirst<Recipe>(sql, new { Id = Id });
+                var ingredientSql = "SELECT * FROM Ingredients WHERE recipeId=?Id";
+                recipe.Ingredients = db.Query<Ingredient>(ingredientSql, new { Id = Id }).ToList();
+                var instructionSql = "SELECT * FROM Instructions WHERE recipeId=?Id";
+                recipe.Instructions = db.Query<Instruction>(instructionSql, new { Id = Id }).OrderBy(x=>x.Stepnumber).ToList();
+
+                return recipe;
             }
         }
 
@@ -53,26 +58,27 @@ namespace recipe_tracker.services
             var instructionSql = @"INSERT INTO instructions (id, recipeId, stepnumber, text)
             Values (?Id, ?RecipeId, ?Stepnumber, ?Text);";
 
-           var ingredients = data.Ingredients.ToList();
-           ingredients.ForEach(x=>x.RecipeId=data.Id);
-           var instructions = data.Instructions.ToList();
-           instructions.ForEach(x=>x.RecipeId=data.Id);
+            var ingredients = data.Ingredients.ToList();
+            ingredients.ForEach(x => x.RecipeId = data.Id);
+            var instructions = data.Instructions.ToList();
+            instructions.ForEach(x => x.RecipeId = data.Id);
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
                 Console.WriteLine(data);
                 db.Open();
-                using (var transaction = db.BeginTransaction()) {
-                var result = db.Execute(sql, data, transaction:transaction);
-                var ingredientResult = transaction.Execute(ingredientSql, ingredients);
-                var instructionResult = transaction.Execute(instructionSql, instructions);
-                transaction.Commit();
-                if (result > 0)
+                using (var transaction = db.BeginTransaction())
                 {
-                    return new Response{success = true, message = ""};
+                    var result = db.Execute(sql, data, transaction: transaction);
+                    var ingredientResult = transaction.Execute(ingredientSql, ingredients);
+                    var instructionResult = transaction.Execute(instructionSql, instructions);
+                    transaction.Commit();
+                    if (result > 0)
+                    {
+                        return new Response { success = true, message = "" };
+                    }
                 }
             }
-            }
-            return new Response{success = false};
+            return new Response { success = false };
         }
 
         public static bool Delete(string id)
@@ -80,10 +86,10 @@ namespace recipe_tracker.services
             return false;
         }
 
-        public class Response 
+        public class Response
         {
-            public bool success {get; set;}
-            public string message {get; set;}
+            public bool success { get; set; }
+            public string message { get; set; }
         }
     }
 }

@@ -14,9 +14,9 @@ namespace recipe_tracker.Models
 
         public string Author { get; set; }
 
-        public IList<Instruction> Instructions { get; set; }
+        public IList<Instruction> Instructions { get; set; } = new List<Instruction>();
 
-        public IList<Ingredient> Ingredients { get; set; }
+        public IList<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 
         public override string ToString() {
             var output = $"{this.Id}|{this.Name}|{this.DateAdded.ToString()}|{this.Author}\n";

@@ -380,3 +380,11 @@ form label {
 form:last-child {
     margin-bottom: 15px;
 }
+
+.recipe {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+.instructions ul {list-style: none;}
