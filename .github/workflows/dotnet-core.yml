@@ -25,20 +25,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: recipe-tracker.dll
-        path: bin/Release/publish/*
+        path: bin/Release/netcoreapp3.1/publish/
     - name: ssh deploy
-      uses: easingthemes/ssh-deploy@v2.1.2
-      env:
-        # Private Key
-        SSH_PRIVATE_KEY: 
-          ${{ secrets.SERVER_SSH_KEY }}
-        # Remote host
-        REMOTE_HOST: 
-          myrecipebook.alasdairselmes.com
-        # Remote user
-        REMOTE_USER: 
-          'root'
-        SOURCE: 
-          '../bin/Release/netcoreapp3.1/'
-        TARGET: 
-          '/root/myrecipebook/' 
+     
