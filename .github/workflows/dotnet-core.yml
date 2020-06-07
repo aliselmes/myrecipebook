@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish --configuration Release --no-restore --self-contained
+      run: dotnet publish --configuration Release --no-restore -r linux-x64
     - name: Artifact
       uses: actions/upload-artifact@v1
       with: 
