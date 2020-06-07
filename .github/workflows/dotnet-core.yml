@@ -26,8 +26,8 @@ jobs:
     - name: Artifact
       uses: actions/upload-artifact@v1
       with: 
-        name: dist
-        path: dist  
+        name: bin
+        path: bin  
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
