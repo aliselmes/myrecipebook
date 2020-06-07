@@ -34,7 +34,7 @@ jobs:
           myrecipebook.alasdairselmes.com
         # Remote user
         REMOTE_USER: 
-          root
+          'root'
         # Target directory
         TARGET: 
           '/root/myrecipebook/' 
