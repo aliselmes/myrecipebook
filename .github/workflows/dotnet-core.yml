@@ -25,7 +25,7 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v2.1.2
-      with:
+      env:
         # Private Key
         SSH_PRIVATE_KEY: 
           ${{ secrets.SERVER_SSH_KEY }}
