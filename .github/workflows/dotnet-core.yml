@@ -20,17 +20,12 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish --configuration Release --no-restore -r linux-x64
+      run: dotnet publish --configuration Release
     - name: Artifact
       uses: actions/upload-artifact@v1
       with: 
         name: recipe-tracker.dll
-        path: bin/Release/netcoreapp3.1/recipe-tracker.dll  
-    - name: Artifact Views 
-      uses: actions/upload-artifact@v1
-      with: 
-        name: recipe-tracker.Views.dll
-        path: bin/Release/netcoreapp3.1/recipe-tracker.Views.dll
+        path: bin/Release/publish
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
