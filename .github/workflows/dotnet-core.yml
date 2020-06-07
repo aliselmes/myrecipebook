@@ -23,3 +23,18 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: ssh deploy
+      uses: easingthemes/ssh-deploy@v2.1.2
+      with:
+        # Private Key
+        SSH_PRIVATE_KEY: 
+          ${{ secrets.SERVER_SSH_KEY }}
+        # Remote host
+        REMOTE_HOST: 
+          myrecipebook.alasdairselmes.com
+        # Remote user
+        REMOTE_USER: 
+          root
+        # Target directory
+        TARGET: 
+          '/root/myrecipebook/' 
