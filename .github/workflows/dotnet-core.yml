@@ -21,13 +21,16 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
     - name: Artifact
       uses: actions/upload-artifact@v1
       with: 
-        name: bin
-        path: bin  
+        name: recipe-tracker.dll
+        path: bin/Release/netcoreapp3.1/recipe-tracker.dll  
+    - name: Artifact Views 
+      uses: actions/upload-artifact@v1
+      with: 
+        name: recipe-tracker.Views.dll
+        path: bin/Release/netcoreapp3.1/recipe-tracker.Views.dll
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
@@ -40,6 +43,7 @@ jobs:
         # Remote user
         REMOTE_USER: 
           'root'
-        # Target directory
+        SOURCE: 
+          'bin/Release/netcoreapp3.1/'
         TARGET: 
           '/root/myrecipebook/' 
