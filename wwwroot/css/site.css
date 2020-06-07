@@ -385,6 +385,27 @@ form:last-child {
     max-width: 800px;
     margin: auto;
     font-size: 1.2rem;
+    font-family: 'Baloo 2', sans-serif;
 }
 
-.instructions ul {list-style: none;}
+.instructions ul {list-style: none;padding-inline-start: 20px;}
+
+.recipe h1 {font-family: 'Gloria Hallelujah', sansserif;color: #945d60;}
+
+.recipe h2 {
+    color: #626e60;
+}
+
+span.stepnumber {font-family: 'Gloria Hallelujah', serif;color: #945d60;margin-right: 10px;}
+
+.ingredients li {
+    padding-left: 10px;
+}
+
+li {}
+
+.ingredients ul {
+    list-style: none;
+    margin-left: 5px;
+    padding-inline-start: 20px;
+}
