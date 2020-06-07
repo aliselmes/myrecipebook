@@ -44,6 +44,6 @@ jobs:
         REMOTE_USER: 
           'root'
         SOURCE: 
-          'bin/Release/netcoreapp3.1/'
+          '/bin/Release/netcoreapp3.1/'
         TARGET: 
           '/root/myrecipebook/' 
