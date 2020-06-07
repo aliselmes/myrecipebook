@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: recipe-tracker.dll
-        path: bin/Release/publish/
+        path: bin/Release/publish/*
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
