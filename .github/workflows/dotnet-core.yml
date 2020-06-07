@@ -26,5 +26,4 @@ jobs:
       with: 
         name: recipe-tracker.dll
         path: bin/Release/netcoreapp3.1/publish/
-    - name: ssh deploy
-     
+
