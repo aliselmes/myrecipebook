@@ -26,4 +26,12 @@ jobs:
       with: 
         name: recipe-tracker.dll
         path: bin/Release/netcoreapp3.1/publish/
-
+    - name: SCP Files
+      uses: appleboy/scp-action@v0.0.1
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        source: "tests/a.txt,tests/b.txt"
+        target: "test"  
