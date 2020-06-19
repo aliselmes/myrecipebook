@@ -27,7 +27,7 @@ namespace recipe_tracker.services
         {
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
-                var recipe = db.Query<Recipe>("Select * From Recipes").ToList();
+                var recipe = db.Query<Recipe>("Select * From recipes").ToList();
                 return recipe;
             }
         }
@@ -36,11 +36,11 @@ namespace recipe_tracker.services
         {
             using (IDbConnection db = new MySqlConnection(GetConnection()))
             {
-                var sql = "SELECT * FROM Recipes WHERE Id=?Id";
+                var sql = "SELECT * FROM recipes WHERE Id=?Id";
                 var recipe = db.QueryFirst<Recipe>(sql, new { Id = Id });
-                var ingredientSql = "SELECT * FROM Ingredients WHERE recipeId=?Id";
+                var ingredientSql = "SELECT * FROM ingredients WHERE recipeId=?Id";
                 recipe.Ingredients = db.Query<Ingredient>(ingredientSql, new { Id = Id }).ToList();
-                var instructionSql = "SELECT * FROM Instructions WHERE recipeId=?Id";
+                var instructionSql = "SELECT * FROM instructions WHERE recipeId=?Id";
                 recipe.Instructions = db.Query<Instruction>(instructionSql, new { Id = Id }).OrderBy(x=>x.Stepnumber).ToList();
 
                 return recipe;
