@@ -3,15 +3,21 @@
 <div class="banner">
     <h1>All Recipes</h1>
 </div>
-<div class="recipe-list">
-    @foreach (var recipe in Model.Recipes) 
-    { 
-        <div class="card">
-            <a href="/recipe/view/@recipe.Id">
-                <h2>
-                    @recipe.Name
-                </h2>
-            </a>
-        </div>
-    }
+<input data-bind="textInput:filter" placeholder="Filter"/>
+<div class="recipe-list" data-bind="template:{name:'recipe-card', foreach:filteredRecipes}">
+    
+    
 </div>
+
+        <template id="recipe-card">
+            <div class="card">
+                <a data-bind="attr:{href:'/recipe/view/'+id()}">
+                    <h2 data-bind="text:name">
+                       
+                    </h2>
+                </a>
+            </div>
+        </template>
+@section Scripts{
+    <script src="/js/RecipesViewModel.js"></script>
+}

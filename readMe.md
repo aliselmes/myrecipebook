@@ -1,4 +1,5 @@
 CREATE DATABASE `recipe_tracker`;
+USE `recipe_tracker`;
 CREATE TABLE `recipes` (
   `id` varchar(36) NOT NULL,
   `name` varchar(1000) NOT NULL,

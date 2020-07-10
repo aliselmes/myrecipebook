@@ -44,6 +44,10 @@ namespace recipe_tracker.Controllers
             return new JsonResult(a);
         }
 
+        public ActionResult GetAll() {
+            var recipes = DatabaseService.GetAll();
+            return new JsonResult(recipes);
+        }
 
     } 
 }

@@ -16,7 +16,7 @@ namespace recipe_tracker.services
     {
         public static string GetConnection()
         {
-            return "Server=localhost;Port=3306;Uid=recipetracker;Pwd=a;Database=recipe_tracker";
+            return "Server=localhost;Port=8889;Uid=recipetracker;Pwd=a;Database=recipe_tracker";
 
             /*
             Configuration.GetSection("ConnectionString")["RecipeDb"];
