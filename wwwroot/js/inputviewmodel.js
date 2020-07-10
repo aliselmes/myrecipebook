@@ -1,4 +1,4 @@
-function inputviewmodel() {
+function InputViewModel() {
     var self = this;
     self.recipe = ko.observable(new recipe());
     self.status = ko.observable();
@@ -11,11 +11,9 @@ function inputviewmodel() {
     };
 
     self.submit = function () {
-
         var data = ko.toJS(self.recipe());
         Post("/recipe/submit", data, function (res) {
             var response = JSON.parse(res)
-            console.log(response)
             if (response.success) {
                 self.status("Recipe added!")
                 self.recipe(new recipe());
@@ -26,32 +24,3 @@ function inputviewmodel() {
         })
     };
 }
-
-function recipe() {
-    var self = this;
-    self.id = ko.observable();
-    self.name = ko.observable();
-    self.ingredients = ko.observableArray([new ingredient()]);
-    self.instructions = ko.observableArray([new instruction()]);
-    self.authorsnotes = ko.observable();
-    self.imgupload = ko.observable();
-    self.author = ko.observable();
-    self.dateadded = ko.observable();
-}
-
-function ingredient() {
-    var self = this;
-    self.id = ko.observable();
-    self.name = ko.observable();
-    self.amount = ko.observable();
-    self.units = ko.observable();
-}
-
-function instruction(step) {
-    var self = this;
-    self.id = ko.observable();
-    self.stepnumber = ko.observable(step || 1);
-    self.text = ko.observable();
-}
-
-

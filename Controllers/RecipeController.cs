@@ -19,6 +19,11 @@ namespace recipe_tracker.Controllers
             return View(model);
         }
 
+        public ActionResult Input()
+        {
+            return View();
+        }
+
          public ActionResult View(Guid Id)
         {
             var model = new RecipeViewModel

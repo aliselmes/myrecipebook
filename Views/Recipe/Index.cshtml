@@ -4,20 +4,17 @@
     <h1>All Recipes</h1>
 </div>
 <input data-bind="textInput:filter" placeholder="Filter"/>
-<div class="recipe-list" data-bind="template:{name:'recipe-card', foreach:filteredRecipes}">
-    
-    
+<div class="recipe-list" data-bind="template:{name:'recipe-card', foreach:filteredRecipes}"> 
 </div>
 
-        <template id="recipe-card">
-            <div class="card">
-                <a data-bind="attr:{href:'/recipe/view/'+id()}">
-                    <h2 data-bind="text:name">
-                       
-                    </h2>
-                </a>
-            </div>
-        </template>
+<template id="recipe-card">
+    <div class="card">
+        <a data-bind="attr:{href:'/recipe/view/'+id()}">
+            <h2 data-bind="text:name"></h2>
+        </a>
+    </div>
+</template>
+
 @section Scripts{
     <script src="/js/RecipesViewModel.js"></script>
 }

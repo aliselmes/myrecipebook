@@ -1,9 +1,8 @@
 @{
-ViewData["Title"] = "Input Page";
+  ViewData["Title"] = "Input Page";
 }
 
 <main>
-
   <form id="submit-recipe" method="post" action="/recipe/submit">
     @Html.AntiForgeryToken()
 
@@ -14,9 +13,7 @@ ViewData["Title"] = "Input Page";
 
     <label for="ingredients">
       <span>Ingredients:</span>
-
       <div id="ingredients" data-bind="foreach:recipe().ingredients">
-
         <div id="ingredients-container">
           <input type="text" id="ingredientname" data-bind="value:name" placeholder="Name">
           <input type="text" id="ingredientamount" data-bind="value:amount" placeholder="Amount">
@@ -37,10 +34,8 @@ ViewData["Title"] = "Input Page";
     </label>
 
     <label for="authorsnotes"><span>Author's Notes:</span>
-
       <textarea type="text" id="authorstext" data-bind="value:recipe().authorsnotes"
         placeholder="Type a note about your recipe!"></textarea>
-
     </label>
 
     <label for="imgupload"><span>Photo:</span>

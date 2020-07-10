@@ -2,23 +2,18 @@ function RecipesViewModel() {
     var self = this
     self.recipes = ko.observableArray()
     self.filter = ko.observable()
-    self.filteredRecipes = ko.computed(function(){
+    self.filteredRecipes = ko.computed(function () {
         if (!self.filter()) {
             return self.recipes()
         }
-        return self.recipes().filter(x=>{
-            return x.name().toLowerCase().includes(self.filter().toLowerCase())
-        })
+        return self.recipes().filter(x => 
+           x.name().toLowerCase().includes(self.filter().toLowerCase())
+        )
     })
-
-
-
-
-
 
     self.load = function () {
         Get('/recipe/GetAll', function (response) {
-            var recipes = JSON.parse(response).map(x=> new recipe(x))
+            var recipes = JSON.parse(response).map(x => new recipe(x))
             console.log(recipes)
             self.recipes(recipes)
         })

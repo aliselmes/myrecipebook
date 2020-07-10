@@ -13,7 +13,6 @@ function Post(url, data, callback) {
     xhr.send(JSON.stringify(data));
 }
 
-
 function Get(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url)
